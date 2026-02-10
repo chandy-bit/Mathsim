@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathSim - Interactive Maths Platform</title>
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel ="stylesheet" href=""https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['noerrors']}
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            },
+            startup: {
+                pageReady: function() {
+                    return MathJax.startup.defaultPageReady().then(function() {
+                        console.log('MathJax is ready');
+                    });
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-calculator"></i>
+                <span>MathSim</span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="Heros">
+            <h1>Welcome to MathSim</h1>
+            <p>Explore the world of mathematics with our interactive simulations and tools.</p>
+            <a href="#" class="btn">Get Started</a>
+
+            
+            <div class ="controls">
+                <button id ="start-graphing" class ="btn>
+                    <i class="fas fa-chart-line></i>
+                    Start Graphing
+                </button>
+            </div>
+        </section>
+
+        <section class=""simulation-area">
+            <canvas id="math-canvas" width="800" height ="500"></canvas>
+            <div class="sim-controls">
+                <button id="reset" class="btn-small">Reset</button>
+                <button id="demo" class="btn-small">Watch Example</button>
+                <button id="hint" class="btn-small">Get hint</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 MathSim Interactive Platform- Making maths visual and accessible.  All rights reserved.</p>
+    </footer>
+    <script src="src/js/main.js"></script>
+</body>
+</html>
